@@ -1,0 +1,23 @@
+{
+  "name": "chatapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhumikapatidar/ChatApp.git"
+  },
+  "author": "Bhumika Patidar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhumikapatidar/ChatApp/issues"
+  },
+  "homepage": "https://github.com/bhumikapatidar/ChatApp#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  }
+}
