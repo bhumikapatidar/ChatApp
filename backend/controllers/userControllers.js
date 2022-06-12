@@ -51,4 +51,21 @@ const authUser = expressAsyncHandler(async (req, res) => {
     }
 });
 
-module.exports = { registerUser, authUser };
+
+// /api/user?search=bhumika
+const allUsers = expressAsyncHandler(async (req, res) => {
+    const keyword = req.query.search
+    ? {
+        $or: [ // $or is used to search for multiple fields
+            { name: { $regex: req.query.search, $options: "i" } },
+            { email: { $regex: req.query.search, $options: "i" } },
+        ],
+
+    }
+    :{};
+    const users = await User.find(keyword).find({_id:{$ne:req.user._id}});
+    res.send(users);
+}); 
+
+
+module.exports = { registerUser, authUser, allUsers };
